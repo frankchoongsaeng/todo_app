@@ -3,14 +3,22 @@ import ContextManager from "data_store";
 
 // import pages
 import Home from "pages";
+import Completed from "pages/completed";
+import Active from "pages/active";
 
 function App() {
   return (
     <BrowserRouter>
       <ContextManager>
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
                <Home />
+            </Route>
+            <Route path="/completed">
+               <Completed />
+            </Route>
+            <Route path="/active">
+               <Active />
             </Route>
           </Switch>
       </ContextManager>
